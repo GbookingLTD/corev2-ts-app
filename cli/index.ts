@@ -42,8 +42,8 @@ export function chooseStart(): Promise<void> {
 
 function startAnswers(answers): Promise<void> {
     switch (answers.action) {
-        case 'appointment_list':
-            return getAppointmentList();
+        //case 'appointment_list':
+        //    return getAppointmentList();
         //case 'person_data':
         //    return getPersonData();
         case 'choose_clinic':
@@ -56,28 +56,28 @@ function startAnswers(answers): Promise<void> {
 /**
  * Точка входа в процесс OTP авторизации.
  */
-function authOtpRequest(): Promise<void> {
-    const questions = [
-        {
-            type: 'input',
-            name: 'phone',
-            message: text.prompt_phone,
-        },
-    ];
-
-    return inquirer
-        .prompt(questions)
-        .then(sendOtpCode)
-        .then(authOtpConfirm);
-}
+// function authOtpRequest(): Promise<void> {
+//     const questions = [
+//         {
+//             type: 'input',
+//             name: 'phone',
+//             message: text.prompt_phone,
+//         },
+//     ];
+//
+//     return inquirer
+//         .prompt(questions)
+//         .then(sendOtpCode)
+//         .then(authOtpConfirm);
+// }
 
 /**
  * Запрос на отправку OTP кода на номер телефона.
  */
-function sendOtpCode(answer): Promise<void> {
-
-    MedMeAPI.otpAuthorize.send();
-}
+// function sendOtpCode(answer): Promise<void> {
+//
+//     MedMeAPI.otpAuthorize.send();
+// }
 
 /**
  * Запрос на подтверждение OTP кода.
@@ -99,9 +99,9 @@ function authOtpConfirm(): Promise<void> {
 /**
  * Получение и отображение списка записей пользователя.
  */
-function getAppointmentList(): Promise<void> {
-
-}
+// function getAppointmentList(): Promise<void> {
+//
+// }
 /*
 function getPersonData(): Promise<void> {
 
