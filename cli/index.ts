@@ -114,9 +114,10 @@ export function chooseClinic(): Promise<void> {
     state.clear();
     let clinics;
 
-    if (env.env === 'dev')
+    if (env.env === 'dev' || env.env === 'local')
         clinics = [
-            {name: "Зубодёр СПб", value: {action:'get_network',networkId: 343}},
+            {name: "Зубодёр СПб", value: {action:'get_business',businessId: 4000000003715}},
+            {name: "Test Telemed", value: {action:'get_business',businessId: 4000000007261}},
             {name: "EHR Demo", value: {action:'get_business',businessId: 4000000006771}},
         ];
     else if (env.env === 'prod')
