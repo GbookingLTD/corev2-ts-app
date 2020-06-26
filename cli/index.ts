@@ -614,7 +614,8 @@ function reserveAppointment(isoDateTime) {
         },
         taxonomy: {
             id: state.selectedTaxonomy.id
-        }
+        },
+        source: 'CLI_APP'
     } as GBookingCoreV2.AppointmentReserve;
 
     return MedMeAPI.appointment.reserveAppointment(params)
