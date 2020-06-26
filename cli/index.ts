@@ -727,7 +727,7 @@ function addClientAndConfirmAppointment(clientInput) {
         client: {
             name: clientInput.name,
             surname: clientInput.surname,
-            middle_name: clientInput.middle_name,
+            middleName: clientInput.middle_name,
             phone: [{
                 country_code: clientInput.phone.substr(0, 1),
                 area_code: clientInput.phone.substr(1, 3),
