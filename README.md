@@ -1,4 +1,4 @@
-# Med.me CLI interactive booking application
+# Gbooking/Med.me CLI interactive booking application
 
 Консольное приложение для онлайн записи через платформу Med.me.
 
