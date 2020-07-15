@@ -21,14 +21,14 @@
 ````bash
 npm i
 npm i @types/node
-npm i http://git.dev.gbooking.ru/gbooking/widget-utils/repository/archive.tar.gz?ref=<version>
-npm i http://git.dev.gbooking.ru/gbooking/corev2-schemata/repository/archive.tar.gz?ref=<version>
-npm i http://git.dev.gbooking.ru/gbooking/corev2-ts-sdk/repository/archive.tar.gz?ref=<version>
+npm i https://github.com/GbookingLTD/widget-utils/archive/<version>.tar.gz
+npm i https://github.com/GbookingLTD/corev2-schemata/archive/<version>.tar.gz
+npm i https://github.com/GbookingLTD/corev2-ts-sdk/archive/<version>.tar.gz
 ````
 
 ### for development
 
-you should download widget-utils and corev2-schemata and resolve 
+you should download widget-utils and corev2-schemata and resolve
 these dependencies using npm link.
 
 ````bash
