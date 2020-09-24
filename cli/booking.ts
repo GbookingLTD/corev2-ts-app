@@ -7,7 +7,9 @@ import {MedMeAPI, initJsonRpcMedMeAPI} from "corev2-ts-sdk/lib/api";
 import {MedMeAPICracSlots} from "corev2-ts-sdk/lib/cracSlots";
 import {getBusinessByIdAction, getNetworkBusinessListAction, handleTtyError} from "./common";
 
-initJsonRpcMedMeAPI();
+import MedMeSDKEnv from "../medme.sdk.env.prod"
+
+initJsonRpcMedMeAPI(MedMeSDKEnv);
 
 const text = l10n[env.l10n];
 
