@@ -1,2 +1,2 @@
-app:
-	npm run app
+booking:
+	npm run booking

@@ -1,0 +1,4 @@
+export default {
+    user: "user_0123456789abcdef",
+    token: "token0123456789abcdef"
+}

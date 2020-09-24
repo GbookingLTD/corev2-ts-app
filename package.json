@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "app": "./node_modules/.bin/ts-node --project tsconfig.json index.ts",
+    "booking": "./node_modules/.bin/ts-node --project tsconfig.json booking.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

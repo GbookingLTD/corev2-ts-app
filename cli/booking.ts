@@ -3,17 +3,13 @@ import * as inquirer from 'inquirer';
 import l10n from "../l10n/index";
 import env from "../env";
 import state from "./state";
-import {MedMeAPI} from "corev2-ts-sdk/lib/api";
+import {MedMeAPI, initJsonRpcMedMeAPI} from "corev2-ts-sdk/lib/api";
 import {MedMeAPICracSlots} from "corev2-ts-sdk/lib/cracSlots";
+import {getBusinessByIdAction, getNetworkBusinessListAction, handleTtyError} from "./common";
+
+initJsonRpcMedMeAPI();
 
 const text = l10n[env.l10n];
-
-export function handleError(err: any) {
-    if (err.isRpcError)
-        return console.error("rpc error %s %s", err.error.code, err.error.message);
-
-    console.error("common error %s", err.message, err.stack);
-}
 
 /**
  * Стартовое меню:
@@ -265,13 +261,6 @@ function chooseBusinessOptions(business: GBookingCoreV2.BusinessClass) {
         .then(chooseBusinessOptionsAnswer);
 }
 
-export function handleTtyError(error) {
-    if(error.isTtyError) {
-        throw "Prompt couldn't be rendered in the current environment";
-    }
-
-    console.error("error %s\n", error.message, error.stack);
-}
 
 export function getBusinessById(): Promise<void|GBookingCoreV2.BusinessClass> {
     const questions = [
@@ -308,16 +297,6 @@ export function getNetworkById(): Promise<void|GBookingCoreV2.BusinessRefInNetwo
             getNetworkBusinessListAction(Number(answers.networkId)))
         .then((businesses: GBookingCoreV2.BusinessRefInNetwork[]) => state.networkBusinesses = businesses)
         .catch(handleTtyError);
-}
-
-function getBusinessByIdAction(businessId): Promise<void|GBookingCoreV2.BusinessClass> {
-    return MedMeAPI.business.getBusinessById(businessId)
-        .catch(handleError);
-}
-
-function getNetworkBusinessListAction(networkId: number): Promise<void|GBookingCoreV2.BusinessRefInNetwork[]> {
-    return MedMeAPI.business.getNetworkBusinessList(networkId)
-        .catch(handleError);
 }
 
 /**

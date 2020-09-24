@@ -1,4 +1,4 @@
 export default {
-    env: 'prod',
+    env: 'local',
     l10n: 'ru-ru'
 }
